@@ -25,8 +25,8 @@ public class Diki {
 
 
 
-        driver.findElementByCssSelector("#contentWrapper > div.dikiBackgroundBannerPlaceholder > div.dikiLogoAndSearchFormWrapperMobile > div.dikiHeaderAndInputSearchContainer > div > form > div.clear_input_div > input").sendKeys(word);
-        driver.findElementByCssSelector("#contentWrapper > div.dikiBackgroundBannerPlaceholder > div.dikiLogoAndSearchFormWrapperMobile > div.dikiHeaderAndInputSearchContainer > div > form > button").click();
+        driver.findElementByCssSelector("input[type='search']").sendKeys(s);
+        driver.findElementByCssSelector("button[type='submit']").click();
 
         try
         {
