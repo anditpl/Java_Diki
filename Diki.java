@@ -35,9 +35,10 @@ public class Diki {
         catch(Exception e)
         {
             System.out.println("Brak hasła w słowniku");
+            System.out.println(driver.findElementByCssSelector("#contentWrapper > div.dikiBackgroundBannerPlaceholder > div.dictionarySuggestions").getText());
         }
-        
-        
+
+
         driver.close();
 
 
