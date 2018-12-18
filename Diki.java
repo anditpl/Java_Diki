@@ -25,7 +25,7 @@ public class Diki {
 
 
 
-        driver.findElementByCssSelector("input[type='search']").sendKeys(s);
+        driver.findElementByCssSelector("input[type='search']").sendKeys(word);
         driver.findElementByCssSelector("button[type='submit']").click();
 
         try
