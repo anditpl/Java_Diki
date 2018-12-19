@@ -11,16 +11,16 @@ public class Diki {
     public static void main(String args[]) {
         CheckWord();
         while (true) {
-            System.out.print("Czy chcesz wyszukać następne hasło (T/N) ?");
+            System.out.print("Czy chcesz wyszukać następne hasło (T/N) ? ");
             userInput = scan.next();
             if (userInput.equalsIgnoreCase("T"))
                 CheckWord();
             else if (userInput.equalsIgnoreCase("N")) {
                 System.out.print("Dziękuję i miłego dnia życzę !! ");
-                System.out.println("Łukasz Krause - www.and-it.pl");
+                System.out.println("Łukasz Krause - http://www.and-it.pl");
                 break;
             } else {
-                System.out.print("Wprowadż T albo N (T/N) only !");
+                System.out.print("Wprowadż T albo N (Y/N) ! ");
             }
 
         }
@@ -28,6 +28,7 @@ public class Diki {
     }
 
     public static void CheckWord() {
+        
         Scanner scan = new Scanner(System.in);
         System.out.print("Wpisz hasło do wyszukania: ");
         String word = scan.next();
