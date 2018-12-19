@@ -1,6 +1,10 @@
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class Diki {
@@ -27,8 +31,21 @@ public class Diki {
 
     }
 
+
+    public static void getDictionary(WebDriver driver, String text) {
+        List<WebElement> mySuggestion = driver.findElements(By.xpath("//*[@class='dictionarySuggestions']/a"));
+        System.out.println("Sugestie: ");
+        for (WebElement e : mySuggestion) {
+            System.out.println(e.getText());
+            if (e.getText().equals(text)) {
+                System.out.println(e.getText());
+                break;
+            }
+        }
+    }
+
     public static void CheckWord() {
-        
+
         Scanner scan = new Scanner(System.in);
         System.out.print("Wpisz hasło do wyszukania: ");
         String word = scan.next();
@@ -46,13 +63,14 @@ public class Diki {
         driver.findElementByCssSelector("input[type='search']").sendKeys(word);
         driver.findElementByCssSelector("button[type='submit']").click();
 
+
         try {
             System.out.println(driver.findElementByClassName("dictionaryEntity").getText());
         } catch (Exception e) {
             System.out.println("Brak hasła w słowniku");
-            System.out.println(driver.findElementByCssSelector("div[class='dictionarySuggestions']").getText());
+            getDictionary(driver, word);
+            //System.out.println(driver.findElementByCssSelector("div[class='dictionarySuggestions']").getText());
         }
-
 
         driver.close();
     }
