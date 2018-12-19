@@ -20,7 +20,7 @@ public class Diki {
                 System.out.println("Łukasz Krause - www.and-it.pl");
                 break;
             } else {
-                System.out.print("Wprowadż T albo N (Y/N) only !");
+                System.out.print("Wprowadż T albo N (T/N) only !");
             }
 
         }
